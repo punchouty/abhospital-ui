@@ -1,110 +1,107 @@
-body {
-    font-size: .875rem;
-}
-
-.feather {
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-}
-
-/*
- * Sidebar
- */
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100; /* Behind the navbar */
-    padding: 48px 0 0; /* Height of navbar */
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-}
-
-.sidebar-sticky {
+.contact-form-wrapper {
+    padding: 25px 0 25px 0;
     position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background: #f1f2f2;
+}
+.inner-banner-content {
+    min-height: auto;
+    padding: 15px 0;
+    background: #f5f9fa;
+}
+.contact-form-inner form {
+    box-shadow: 0px 3px 35px 0px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+    padding: 25px;
+    border-top: 2px solid #c76392;
+    background: #fff;
+}
+.contact-form-inner form .form-group {
+    margin-bottom: 10px;
 }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-    .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
+.contact-form-wrapper input[type=checkbox] + label:before {
+    content: "";
+}
+
+.contact-form-wrapper input[type=checkbox]:checked + label:before {
+    content: "";
+}
+
+.contact-form-wrapper input[type="checkbox"] { display: inline  ; }
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("fonts/Flaticon.eot");
+    src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Flaticon.woff2") format("woff2"),
+    url("fonts/Flaticon.woff") format("woff"),
+    url("fonts/Flaticon.ttf") format("truetype"),
+    url("fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("fonts/Flaticon.svg#Flaticon") format("svg");
     }
 }
 
-.sidebar .nav-link {
-    font-weight: 500;
-    color: #333;
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
 }
 
-.sidebar .nav-link .feather {
-    margin-right: 4px;
-    color: #999;
+.flaticon-arrow:before {
+    content: "\f100";
 }
 
-.sidebar .nav-link.active {
-    color: #007bff;
+.flaticon-team:before {
+    content: "\f101";
 }
 
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-    color: inherit;
+.flaticon-calendar:before {
+    content: "\f102";
 }
 
-.sidebar-heading {
-    font-size: .75rem;
-    text-transform: uppercase;
+.flaticon-person:before {
+    content: "\f103";
 }
 
-/*
- * Content
- */
-
-[role="main"] {
-    padding-top: 133px; /* Space for fixed navbar */
+.flaticon-money:before {
+    content: "\f104";
 }
 
-@media (min-width: 768px) {
-    [role="main"] {
-        padding-top: 48px; /* Space for fixed navbar */
-    }
+.flaticon-clinic:before {
+    content: "\f105";
 }
 
-/*
- * Navbar
- */
-
-.navbar-brand {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, .25);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+.flaticon-user:before {
+    content: "\f106";
 }
 
-.navbar .form-control {
-    padding: .75rem 1rem;
-    border-width: 0;
-    border-radius: 0;
+.flaticon-portfolio:before {
+    content: "\f107";
 }
 
-.form-control-dark {
+.flaticon-patient:before {
+    content: "\f108";
+}
+
+.flaticon-medical-file:before {
+    content: "\f109";
+}
+
+.flaticon-home-page:before {
+    content: "\f10a";
+}
+textarea {
+    height: 400px;
+}
+.special-button:hover {
+    background: #364c7d;
     color: #fff;
-    background-color: rgba(255, 255, 255, .1);
-    border-color: rgba(255, 255, 255, .1);
-}
-
-.form-control-dark:focus {
-    border-color: transparent;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-}
-
-.color-icon {
-    color: #c66392;
 }
