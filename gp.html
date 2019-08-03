@@ -10,7 +10,9 @@
     <!-- Custom CSS -->
     <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/style.css" rel="stylesheet">
     <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <link rel="shortcut icon" href="https://alpha.abhospitals.com/wp-content/themes/abhospital/images/favicon.png"/>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -132,6 +134,26 @@
         .page-link {
             color: #023951;
         }
+
+        .contact-form-wrapper .btn-default{
+            height: 50px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .applyBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .cancelBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 
@@ -162,7 +184,7 @@
                     <ul class="top-right-menu list-inline d-flex justify-content-end">
                         <li class="d-none d-md-block d-lg-block"><a
                                 href="#"><i class="flaticon-home-page"></i>Home</a></li>
-                        <li >
+                        <li>
                             <a href="#"><i class="flaticon-arrow"></i> Sign Out</a>
                         </li>
                     </ul>
@@ -199,6 +221,55 @@
         </div>
         <div class="contact-form-wrapper">
             <div class="container">
+                <form action="/" method="get">
+                    <div class="row">
+                        <div class="blog-search offset-md-1 col-md-3 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control" placeholder="Name.." name="s" id="search" value="">
+                            <button class="button" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <button class="btn btn-default" type="submit">Search</button>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <a class="btn btn-link" data-toggle="collapse" href="#advanceSearch" role="button">
+                                Advance Search
+                            </a>
+                        </div>
+                    </div>
+                    <div class="collapse" id="advanceSearch">
+                        <div class="row">
+                            <div class="form-group offset-md-1 col-md-3 col-sm-12 col-xs-12">
+                                <label>Gender</label>
+                                <div>
+                                    <input id="male" type="radio" name="radio" checked/>
+                                    <label for="male" class="mr-2">Male</label>
+                                    <input id="female" type="radio" name="radio"/>
+                                    <label for="female" class="mr-2">Female</label>
+                                    <input id="other" type="radio" name="radio"/>
+                                    <label for="other">Others</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                                <label for="status">Status </label>
+                                <select class="form-control custom-select custom-select-sm form-control-sm"
+                                        id="status">
+                                    <option>New</option>
+                                    <option>OPD</option>
+                                    <option>PAC</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 col-sm-12 col-xs-12">
+                                <label for="dateRange">Date Range</label>
+                                <input type="text" id="dateRange" name="dateRange" class="form-control"
+                                       placeholder="Date Range" required>
+                            </div>
+                            <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                                <label>.</label>
+                                <button class="btn btn-default" type="submit">Advance</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <div class="row">
                     <div class="offset-md-1 col-md-10">
                         <div class="table-responsive">
@@ -419,6 +490,17 @@
 <!-- custom js -->
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function () {
+        $('input[name="dateRange"]').daterangepicker({
+            opens: 'left'
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
+</script>
 </body>
 
 
