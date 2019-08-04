@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="profile" href="https://gmpg.org/xfn/11"/>
+    <!-- bootstrap CSS -->
+    <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/bootstrap.min.css"
+          rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/style.css" rel="stylesheet">
+    <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://alpha.abhospitals.com/wp-content/themes/abhospital/images/favicon.png"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>Patient Details | AB Hospital</title>
+    <style>
+        .contact-form-wrapper {
+            padding: 25px 0 25px 0;
+            position: relative;
+            background: #f1f2f2;
+        }
+
+        .inner-banner-content {
+            min-height: auto;
+            padding: 15px 0;
+            background: #f5f9fa;
+        }
+
+        .contact-form-inner form {
+            box-shadow: 0px 3px 35px 0px rgba(0, 0, 0, 0.11);
+            border-radius: 6px;
+            padding: 25px;
+            border-top: 2px solid #c76392;
+            background: #fff;
+        }
+
+        .contact-form-inner form .form-group {
+            margin-bottom: 10px;
+        }
+
+        .contact-form-wrapper input[type=checkbox] + label:before {
+            content: "";
+        }
+
+        .contact-form-wrapper input[type=checkbox]:checked + label:before {
+            content: "";
+        }
+
+        .contact-form-wrapper input[type="checkbox"] {
+            display: inline;
+        }
+
+        @font-face {
+            font-family: "Flaticon";
+            src: url("fonts/Flaticon.eot");
+            src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+            url("fonts/Flaticon.woff2") format("woff2"),
+            url("fonts/Flaticon.woff") format("woff"),
+            url("fonts/Flaticon.ttf") format("truetype"),
+            url("fonts/Flaticon.svg#Flaticon") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            @font-face {
+                font-family: "Flaticon";
+                src: url("fonts/Flaticon.svg#Flaticon") format("svg");
+            }
+        }
+
+        [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+        [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+            font-family: Flaticon;
+            font-size: 20px;
+            font-style: normal;
+        }
+
+        .flaticon-arrow:before {
+            content: "\f100";
+        }
+
+        .flaticon-team:before {
+            content: "\f101";
+        }
+
+        .flaticon-calendar:before {
+            content: "\f102";
+        }
+
+        .flaticon-person:before {
+            content: "\f103";
+        }
+
+        .flaticon-money:before {
+            content: "\f104";
+        }
+
+        .flaticon-clinic:before {
+            content: "\f105";
+        }
+
+        .flaticon-user:before {
+            content: "\f106";
+        }
+
+        .flaticon-portfolio:before {
+            content: "\f107";
+        }
+
+        .flaticon-patient:before {
+            content: "\f108";
+        }
+
+        .flaticon-medical-file:before {
+            content: "\f109";
+        }
+
+        .flaticon-home-page:before {
+            content: "\f10a";
+        }
+
+        textarea {
+            height: 400px;
+        }
+
+        .special-button:hover {
+            background: #364c7d;
+            color: #fff;
+        }
+        .nav-tabs .nav-item {
+            margin-bottom: -1px;
+            margin-left: 1px;
+        }
+        .nav-link {
+            border-color: #b474b6;
+            background-color: #b97ebb;
+            color: #fff;
+        }
+
+        .nav-link:hover {
+            border-color: #b474b6;
+            background-color: #364c7d;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main-wrapper">
+    <!-- NAVBAR -->
+    <div class="inner-nav">
+        <div class="header-menu-container d-flex align-items-center justify-content-between">
+            <nav class="navbar navbar-expand-md align-items-center justify-content-between w-100">
+                <div class="logo-wrpap">
+                    <button id="menu" class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <div id="nav-icon" class="">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                    <a class="logo-link navbar-brand" href="https://alpha.abhospitals.com"><img
+                            src="https://alpha.abhospitals.com/wp-content/uploads/2019/03/logo.png" alt="Brand"></a>
+                </div>
+                <div class="menu-wrapper">
+                    <ul class="top-right-menu list-inline d-flex justify-content-end">
+                        <li class="d-none d-md-block d-lg-block"><a
+                                href="#"><i class="flaticon-home-page"></i>Home</a></li>
+                        <li class="phone-popup">
+                            <a href=";" id="phone_popup"><i class="flaticon-arrow"></i> Sign Out</a>
+                        </li>
+                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="navbar-nav ml-auto justify-content-end align-items-center">
+                            <li class="nav-item menu-item">
+                                <a href="gp.html"><i class="flaticon-team" style="color: #c66392"></i> My Patients</a>
+                            </li>
+                            <li class="nav-item menu-item">
+                                <a href="gp-new-patient.html"><i class="flaticon-patient" style="color: #c66392"></i>
+                                    New Patient</a></li>
+                            <li class="nav-item menu-item">
+                                <a href="gp-accounting.html"><i class="flaticon-money" style="color: #c66392"></i>
+                                    Accounting</a></li>
+                            <li class="nav-item menu-item">
+                                <a href="gp-profile.html"><i class="flaticon-user" style="color: #c66392"></i>
+                                    Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- END NAVBAR WRAPPER HERE -->
+    <div class="home-page">
+
+
+        <div id="innerservicess" class="inner-main-banner">
+            <div class="inner-banner-content">
+                <div class="container d-flex align-items-center">
+                    <h1>Patient</h1>
+                    <p>Detail Record</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-md-1 col-md-10">
+                        <div class="row">
+                            <div class="col-sm-3"><!--left col-->
+                                <div class="text-center">
+                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                         class="avatar img-circle img-thumbnail" alt="avatar">
+                                    <h6 class="mt-3 mb-3"></h6>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#summary">Summary</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#documents">Documents</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#payments">Payments</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#status">Status</a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div id="summary" class="container tab-pane active"><br>
+                                        <div class="row mt-3">
+                                            <div class="col-md-5 col-sm-12">
+                                                <div class="display-5">Rajeev Garg (40 Male)</div>
+                                                <small><cite title="Orthopedic Surgeon">Single Room</cite></small>
+                                                <div class="contact-office">
+                                                    <div class="display-3 contact-title">Hernia Treatment</div>
+                                                    <p><strong>Payment </strong> 33,333</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item"><strong>Patient Admitted :</strong> 26 August 2019</li>
+                                                    <li class="list-group-item"><strong>Patient Operated :</strong> 27 August 2019</li>
+                                                    <li class="list-group-item"><strong>Patient Discharged :</strong> 28 August 2019</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="documents" class="container tab-pane fade"><br>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Document Name</th>
+                                                <th>Date</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><a href="#">X-Ray Report</a></td>
+                                                <td>26 August 2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">OPD slip</a></td>
+                                                <td>27 August 2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Blood sugar report</a></td>
+                                                <td>28 August 2019</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="payments" class="container tab-pane fade"><br>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Payment Amount</th>
+                                                <th>Date</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>3000 Rs</td>
+                                                <td>26 August 2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12,000 Rs</td>
+                                                <td>27 August 2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13,000 Rs</td>
+                                                <td>28 August 2019</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="status" class="container tab-pane fade"><br>
+                                        <h2><span class="badge badge-secondary">New</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/col-9-->
+            </div><!--/row-->
+        </div>
+    </div>
+</div>
+
+
+</div><!-- END home-page HERE -->
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-12">
+                    <div class="left-footer-widget">
+                        <div class="lef-footer-head d-flex align-items-baseline">
+                            <div class="logo">
+                                <a href="https://alpha.abhospitals.com"><img
+                                        src="https://alpha.abhospitals.com/wp-content/uploads/2019/03/footer-logo.png"
+                                        alt="brand"></a>
+                            </div>
+                            <div class="about-brand">
+                                <section id="custom_html-2" class="widget_text widget widget_custom_html">
+                                    <div class="textwidget custom-html-widget"><p>AB Hospitals is a tech-enabled
+                                        chain of surgery centres offering affordable surgical healthcare.</p></div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="left-footer-contact-widget">
+                            <section id="custom_html-3" class="widget_text widget widget_custom_html">
+                                <div class="textwidget custom-html-widget"><p>AB Lifecare Private Limited, 203, Star
+                                    Towers, Sector 30, Gurugram – 122001</p>
+                                    <ul class="list-inline">
+                                        <li><a href="tel:+919170170170" target="_blank" rel="noopener noreferrer"><i
+                                                class="flaticon-telephone"></i> +91 9170170170</a></li>
+                                        <li><a href="mailto:hello@abhospitals.com" target="_blank"
+                                               rel="noopener noreferrer"><i class="flaticon-close-envelope"></i>
+                                            hello@abhospitals.com</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="right-footer-widget d-flex">
+                        <div class="right-footer-links">
+
+                            <section id="nav_menu-2" class="widget widget_nav_menu"><h4>Surgeries we offer</h4>
+                                <div class="menu-footer-menu1-container">
+                                    <ul id="menu-footer-menu1" class="menu">
+                                        <li id="menu-item-84"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84">
+                                            <a href="https://alpha.abhospitals.com/surgeries/hemorrohoids-and-anorectal/">Piles</a>
+                                        </li>
+                                        <li id="menu-item-83"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83">
+                                            <a href="https://alpha.abhospitals.com/surgeries/gall-bladder-removal-surgery/">Gall
+                                                bladder Removal</a></li>
+                                        <li id="menu-item-85"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85">
+                                            <a href="https://alpha.abhospitals.com/surgeries/biopsy/">Minor
+                                                Surgeries</a></li>
+                                        <li id="menu-item-82"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82">
+                                            <a href="https://alpha.abhospitals.com/surgeries/hernia-repair-surgery/">Hernia
+                                                Repair</a></li>
+                                        <li id="menu-item-81"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81">
+                                            <a href="https://alpha.abhospitals.com/surgeries/total-laparoscopic-hysterectomy/">Uterus
+                                                and Ovary Surgery</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="right-footer-links">
+                            <section id="nav_menu-3" class="widget widget_nav_menu"><h4>About</h4>
+                                <div class="menu-footer-menu2-container">
+                                    <ul id="menu-footer-menu2" class="menu">
+                                        <li id="menu-item-98"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98">
+                                            <a href="https://alpha.abhospitals.com/about-ab-hospitals/">About AB
+                                                Hospitals</a></li>
+                                        <li id="menu-item-95"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95">
+                                            <a href="https://alpha.abhospitals.com/career-opportunities/">Career
+                                                Opportunities</a></li>
+                                        <li id="menu-item-481"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-481">
+                                            <a href="https://alpha.abhospitals.com/partner-with-us/doctor-partners/">Partnerships</a>
+                                        </li>
+                                        <li id="menu-item-96"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96">
+                                            <a href="https://alpha.abhospitals.com/blog/">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom d-flex align-items-center justify-content-between">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 col-sm-5  col-xs-12 text-md-left text-center">
+                    <p class="copyright">© 2018-20 AB Hospitals. <a
+                            href="https://alpha.abhospitals.com/privacy-policy"> Privacy Policy</a> <a
+                            href="https://alpha.abhospitals.com/terms-of-use/">Terms of use</a></p>
+                </div>
+                <div class="col-md-4 col-sm-4 sol-xs-12 text-center">
+                    <ul class="socials list-inline">
+                        <li><a href="https://www.facebook.com/abhospitals" target="_blank"><i
+                                class="flaticon-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/abhospitals" target="_blank"><i
+                                class="flaticon-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/abhospitals" target="_blank"><i
+                                class="flaticon-linkedin"></i></a></li>
+                        <li><a href="https://youtube.com/abhospitals" target="_blank"><i
+                                class="flaticon-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-3 sol-xs-12 text-md-right text-center">
+                    <p>Designed &amp; Developed by <a href="http://itsoftech.com/" target="_blank">IT Softech</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div><!-- End main-Wrapper -->
+<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/bootstrap.min.js"></script>
+<!-- custom js -->
+<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
+<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script type='text/javascript' src='https://alpha.abhospitals.com/wp-content/plugins/js_composer/assets/lib/vc_tabs/vc-tabs.min.js?ver=5.5.2'></script>
+
+
+</body>
+
+

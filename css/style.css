@@ -3,11 +3,13 @@
     position: relative;
     background: #f1f2f2;
 }
+
 .inner-banner-content {
     min-height: auto;
     padding: 15px 0;
     background: #f5f9fa;
 }
+
 .contact-form-inner form {
     box-shadow: 0px 3px 35px 0px rgba(0, 0, 0, 0.11);
     border-radius: 6px;
@@ -15,28 +17,19 @@
     border-top: 2px solid #c76392;
     background: #fff;
 }
+
 .contact-form-inner form .form-group {
     margin-bottom: 10px;
 }
 
-.contact-form-wrapper input[type=checkbox] + label:before {
-    content: "";
-}
-
-.contact-form-wrapper input[type=checkbox]:checked + label:before {
-    content: "";
-}
-
-.contact-form-wrapper input[type="checkbox"] { display: inline  ; }
-
 @font-face {
     font-family: "Flaticon";
-    src: url("fonts/Flaticon.eot");
-    src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Flaticon.woff2") format("woff2"),
-    url("fonts/Flaticon.woff") format("woff"),
-    url("fonts/Flaticon.ttf") format("truetype"),
-    url("fonts/Flaticon.svg#Flaticon") format("svg");
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Flaticon.woff2") format("woff2"),
+    url("../fonts/Flaticon.woff") format("woff"),
+    url("../fonts/Flaticon.ttf") format("truetype"),
+    url("../fonts/Flaticon.svg#Flaticon") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -44,7 +37,7 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     @font-face {
         font-family: "Flaticon";
-        src: url("fonts/Flaticon.svg#Flaticon") format("svg");
+        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
     }
 }
 
@@ -98,10 +91,47 @@
 .flaticon-home-page:before {
     content: "\f10a";
 }
+
 textarea {
     height: 400px;
 }
-.special-button:hover {
-    background: #364c7d;
-    color: #fff;
+
+.page-link {
+    color: #023951;
+}
+
+.contact-form-wrapper {
+    background: #fff;
+}
+
+.contact-form-wrapper .btn-default{
+    height: 50px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.contact-form-wrapper input[type=checkbox] + label:before {
+    content: "";
+}
+
+.contact-form-wrapper input[type=checkbox]:checked + label:before {
+    content: "";
+}
+
+.contact-form-wrapper input[type="checkbox"] {
+    display: inline;
+}
+.applyBtn {
+    width : 25%;
+    border-radius:4px;
+    height: 25px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.cancelBtn {
+    width : 25%;
+    border-radius:4px;
+    height: 25px;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
