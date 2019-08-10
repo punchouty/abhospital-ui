@@ -139,21 +139,23 @@
             background: #fff;
         }
 
-        .contact-form-wrapper .btn-default{
+        .contact-form-wrapper .btn-default {
             height: 50px;
             line-height: 1.5;
             text-transform: uppercase;
         }
+
         .applyBtn {
-            width : 25%;
-            border-radius:4px;
+            width: 25%;
+            border-radius: 4px;
             height: 25px;
             line-height: 1.5;
             text-transform: uppercase;
         }
+
         .cancelBtn {
-            width : 25%;
-            border-radius:4px;
+            width: 25%;
+            border-radius: 4px;
             height: 25px;
             line-height: 1.5;
             text-transform: uppercase;
@@ -195,13 +197,16 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto justify-content-end align-items-center">
                             <li class="nav-item menu-item">
-                                <a href="admin-users-list.html"><i class="flaticon-team" style="color: #c66392"></i> All Users</a>
+                                <a href="admin-users-list.html"><i class="flaticon-team" style="color: #c66392"></i> All
+                                    Users</a>
                             </li>
                             <li class="nav-item menu-item">
-                                <a href="admin-add-user.html"><i class="flaticon-person" style="color: #c66392"></i> New User</a>
+                                <a href="admin-add-user.html"><i class="flaticon-person" style="color: #c66392"></i> New
+                                    User</a>
                             </li>
                             <li class="nav-item menu-item">
-                                <a href="admin-treatment-list.html"><i class="flaticon-clinic" style="color: #c66392"></i> Treatments</a>
+                                <a href="admin-treatment-list.html"><i class="flaticon-clinic"
+                                                                       style="color: #c66392"></i> Treatments</a>
                             </li>
                         </ul>
                     </div>
@@ -225,12 +230,44 @@
             <div class="container">
                 <form action="/" method="get">
                     <div class="row">
-                        <div class="blog-search offset-md-1 col-md-3 col-sm-12 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Name.." name="s" id="search" value="">
-                            <button class="button" type="submit"><i class="fa fa-search"></i></button>
+                        <div class="form-group offset-md-1 col-md-3 col-sm-12 col-xs-12">
+                            <label for="name">Patient Name</label>
+                            <input type="text" id="name" name="name" class="form-control"
+                                   placeholder="Patient Name">
+                        </div>
+                        <!--<div class="blog-search offset-md-1 col-md-3 col-sm-12 col-xs-12">-->
+                        <!--<input type="text" class="form-control" placeholder="Name.." name="s" id="search" value="">-->
+                        <!--<button class="button" type="submit"><i class="fa fa-search"></i></button>-->
+                        <!--</div>-->
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <label for="gp">GP Name</label>
+                            <input type="text" id="gp" name="name" class="form-control"
+                                   placeholder="GP Name">
                         </div>
                         <div class="form-group col-md-2 col-sm-12 col-xs-12">
-                            <button class="btn btn-default" type="submit">Search</button>
+                            <label for="role">Role </label>
+                            <select class="form-control custom-select custom-select-sm form-control-sm"
+                                    id="role" multiple>
+                                <option>Guest</option>
+                                <option>Admin</option>
+                                <option>Super Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-12 col-xs-12">
+                            <label for="dateRange">Date Range</label>
+                            <input type="text" id="dateRange" name="dateRange" class="form-control"
+                                   placeholder="Date Range" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group offset-md-1 col-md-2 col-sm-12 col-xs-12">
+                            <h5 style="color: #c76392;">4 results found</h5>
+                        </div>
+                        <div class="form-group offset-md-4 col-md-2 col-sm-12 col-xs-12">
+                            <button class="btn btn-default searchBtn" type="submit">Search</button>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <button id="clearButton" class="btn btn-default clearBtn" type="button">Clear</button>
                         </div>
                     </div>
                 </form>
@@ -242,7 +279,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Mobile</th>
-                                    <th>Email</th>
+                                    <th>GP Name</th>
                                     <th>Role</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -252,52 +289,60 @@
                                 <tr>
                                     <td>Rajan Punchouty</td>
                                     <td>9874634827</td>
-                                    <td>rajan@gmail.com</td>
+                                    <td>Dr. Batra</td>
                                     <td>Admin</td>
                                     <td><span class="badge badge-success">Active</span></td>
                                     <td class="text-center">
-                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i
+                                                class="fa fa-edit"></i>
                                         </a>
-                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal"
+                                           data-target="#exampleModal"> <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Neeru Narang</td>
                                     <td>9375826482</td>
-                                    <td>neeru.narang@abhospital.com</td>
+                                    <td>Dr. A. B. C. Subramanyam</td>
                                     <td>Guest</td>
                                     <td><span class="badge badge-success">Active</span></td>
                                     <td class="text-center">
-                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i
+                                                class="fa fa-edit"></i>
                                         </a>
-                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal"
+                                           data-target="#exampleModal"> <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Parminder Singh</td>
                                     <td>9846284736</td>
-                                    <td>parminder.singh@somecompany.com</td>
+                                    <td>Dr. B.C. Mahapatra</td>
                                     <td>Super Admin</td>
                                     <td><span class="badge badge-danger">Inactive</span></td>
                                     <td class="text-center">
-                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i
+                                                class="fa fa-edit"></i>
                                         </a>
-                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal"
+                                           data-target="#exampleModal"> <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Pankaj Mittal</td>
                                     <td>98365583653</td>
-                                    <td>pankaj.mittal@abhospital.com</td>
+                                    <td>Dr. K.P.Singh</td>
                                     <td>Guest</td>
                                     <td><span class="badge badge-warning">Pending</span></td>
                                     <td class="text-center">
-                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                        <a title="Edit" href="admin-add-user.html" class="btn btn-outline-warning"> <i
+                                                class="fa fa-edit"></i>
                                         </a>
-                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                        <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal"
+                                           data-target="#exampleModal"> <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -443,7 +488,8 @@
             </div>
         </div>
     </footer>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -469,6 +515,28 @@
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function () {
+        $('input[name="dateRange"]').daterangepicker({
+            opens: 'left',
+            startDate: moment().subtract(30, 'days'),
+            endDate: moment(),
+            locale: {
+                format: 'DD MMM YYYY'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MMM-DD') + ' to ' + end.format('YYYY-MMM-DD'));
+        });
+    });
+    $("#clearButton").click(function () {
+        $("#name").val("");
+        $("select option").prop("selected", false);
+        $('input[name="dateRange"]').data('daterangepicker').setStartDate(moment().subtract(30, 'days'));
+        $('input[name="dateRange"]').data('daterangepicker').setEndDate(moment());
+    });
+
+</script>
 </body>
+</html>
 
 

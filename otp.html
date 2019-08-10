@@ -26,11 +26,13 @@
             position: relative;
             background: #f1f2f2;
         }
+
         .inner-banner-content {
             min-height: auto;
             padding: 15px 0;
             background: #f5f9fa;
         }
+
         .contact-form-inner form {
             box-shadow: 0px 3px 35px 0px rgba(0, 0, 0, 0.11);
             border-radius: 6px;
@@ -38,6 +40,7 @@
             border-top: 2px solid #c76392;
             background: #fff;
         }
+
         .contact-form-inner form .form-group {
             margin-bottom: 10px;
         }
@@ -50,7 +53,18 @@
             content: "";
         }
 
-        .contact-form-wrapper input[type="checkbox"] { display: inline  ; }
+        .contact-form-wrapper input[type="checkbox"] {
+            display: inline;
+        }
+
+        .contact-form-wrapper label {
+            color: #ff3900;
+        }
+
+        .contact-form-wrapper .form-label {
+            color: #023951;
+        }
+
 
     </style>
 </head>
@@ -158,23 +172,24 @@
                         </div>
                         <div class="contact-form-inner">
                             <div role="form">
-                                <form action="#" method="post">
+                                <form id="pageForm" action="#" method="post">
                                     <div class="row">
                                         <div class="form-group offset-md-1 col-md-10 col-sm-12 col-xs-12">
-                                            <label for="otp">OTP</label><br/>
-                                            <input type="text" id="otp"
+                                            <label class="form-label" for="otp">OTP</label><br/>
+                                            <input type="text"
+                                                   id="otp"
+                                                   name="otp"
                                                    placeholder="OTP"
                                                    size="40"
                                                    class="form-control"
-                                                   aria-required="true"
-                                                   aria-invalid="false" required/>
+                                                   minlength="4" required/>
                                         </div>
                                         <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12 text-center">
                                             <input type="submit" value="LOGIN"
                                                    class="btn-default"/>
                                         </div>
                                         <div class="mt-3 offset-md-1 col-md-10 col-sm-12 col-xs-12 text-center">
-                                            <a href="forgot-error.html" class="btn btn-link">
+                                            <a href="forgot.html" class="btn btn-link">
                                                 Resend OTP
                                             </a>
                                         </div>
@@ -313,10 +328,30 @@
     </footer>
 
 </div><!-- End main-Wrapper -->
-<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/bootstrap.min.js"></script>
-<!-- custom js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script><!-- custom js -->
+
+<script src=https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+<script>
+    $.validator.setDefaults({
+        submitHandler: function () {
+            alert("submitted!");
+            return false;
+        }
+    });
+    $().ready(function () {
+        $("#pageForm").validate();
+    });
+</script>
 </body>
+</html>
 
 

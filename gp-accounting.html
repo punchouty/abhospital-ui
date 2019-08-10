@@ -132,6 +132,41 @@
         .page-link {
             color: #023951;
         }
+        /* For Date picker button start */
+        .applyBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .cancelBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        /* For Date picker button end */
+        .contact-form-wrapper .btn-default{
+            height: 50px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .contact-form-wrapper .clearBtn {
+            width : 100%;
+            border-radius:4px;
+            height: 40px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        .contact-form-wrapper .searchBtn {
+            width : 100%;
+            border-radius:4px;
+            height: 40px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -201,13 +236,54 @@
         </div>
         <div class="contact-form-wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="offset-md-1 col-md-3 blog-search">
-                        <form action="/" method="get">
-                            <input type="text" class="form-control" placeholder="Search.." name="s" id="search" value="">
-                            <button class="button" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                <form action="/" method="get">
+                    <div class="row">
+                        <div class="form-group offset-md-1 col-md-3 col-sm-12 col-xs-12">
+                            <label for="name">Patient Name</label>
+                            <input type="text" id="name" name="name" class="form-control"
+                                   placeholder="Patient Name">
+                        </div>
+                        <!--<div class="blog-search offset-md-1 col-md-3 col-sm-12 col-xs-12">-->
+                        <!--<input type="text" class="form-control" placeholder="Name.." name="s" id="search" value="">-->
+                        <!--<button class="button" type="submit"><i class="fa fa-search"></i></button>-->
+                        <!--</div>-->
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <label class="form-label" for="gender">Gender </label>
+                            <select class="form-control custom-select custom-select-sm form-control-sm"
+                                    id="gender" multiple>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <label for="status">Status </label>
+                            <select class="form-control custom-select custom-select-sm form-control-sm"
+                                    id="status" multiple>
+                                <option>New</option>
+                                <option>OPD</option>
+                                <option>PAC</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-12 col-xs-12">
+                            <label for="dateRange">Date Range</label>
+                            <input type="text" id="dateRange" name="dateRange" class="form-control"
+                                   placeholder="Date Range" required>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group offset-md-1 col-md-2 col-sm-12 col-xs-12">
+                            <h5 style="color: #c76392;">4 results found</h5>
+                        </div>
+                        <div class="form-group offset-md-4 col-md-2 col-sm-12 col-xs-12">
+                            <button class="btn btn-default searchBtn" type="submit">Search</button>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <button id="clearButton" class="btn btn-default clearBtn" type="button">Clear</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
                     <div class="offset-md-1 col-md-10">
                         <div class="table-responsive">
                             <table id="patients" class="table table-striped" style="width:100%">
@@ -223,7 +299,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Sapna Mittal</td>
+                                    <td><a href="gp-patient-details.html">Sapna Mittal</a></td>
                                     <td>48</td>
                                     <td>Female</td>
                                     <td>Gall bladder</td>
@@ -231,7 +307,7 @@
                                     <td>12,456</td>
                                 </tr>
                                 <tr>
-                                    <td>Diksha Singh</td>
+                                    <td><a href="gp-patient-details.html">Diksha Singh</a></td>
                                     <td>52</td>
                                     <td>Female</td>
                                     <td>TLH</td>
@@ -239,7 +315,7 @@
                                     <td>23,456</td>
                                 </tr>
                                 <tr>
-                                    <td>Vinod Kumar</td>
+                                    <td><a href="gp-patient-details.html">Vinod Kumar</a></td>
                                     <td>23</td>
                                     <td>Male</td>
                                     <td>Hernia</td>
@@ -247,7 +323,7 @@
                                     <td>34,567</td>
                                 </tr>
                                 <tr>
-                                    <td>Rajiv Garg</td>
+                                    <td><a href="gp-patient-details.html">Rajiv Garg</a></td>
                                     <td>40</td>
                                     <td>Male</td>
                                     <td>Piles</td>
@@ -402,6 +478,30 @@
 <!-- custom js -->
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function () {
+        $('input[name="dateRange"]').daterangepicker({
+            opens: 'left',
+            startDate: moment().subtract(30, 'days'),
+            endDate: moment(),
+            locale: {
+                format: 'DD MMM YYYY'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MMM-DD') + ' to ' + end.format('YYYY-MMM-DD'));
+        });
+    });
+    $("#clearButton").click(function(){
+        $("#name").val("");
+        $("select option").prop("selected", false);
+        $('input[name="dateRange"]').data('daterangepicker').setStartDate(moment().subtract(30, 'days'));
+        $('input[name="dateRange"]').data('daterangepicker').setEndDate(moment());
+    });
+
+</script>
 </body>
+</html>
 
 

@@ -133,6 +133,14 @@
             background: #364c7d;
             color: #fff;
         }
+
+        .contact-form-wrapper label {
+            color: #ff3900;
+        }
+
+        .contact-form-wrapper .form-label {
+            color: #023951;
+        }
     </style>
 </head>
 
@@ -202,41 +210,62 @@
             <div class="container">
                 <div class="row">
                     <div class="offset-md-1 col-md-10">
+                        <div class="justify-content-center">
+                            <div class="alert alert-danger" role="alert">
+                                Error message from server
+                            </div>
+                        </div>
                         <div class="contact-form-inner">
                             <div role="form">
-                                <form action="#" method="post">
+                                <form id="pageForm" method="post">
                                     <div class="row">
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="patientName">Patient Name</label>
-                                            <input type="text" id="patientName" size="40" class="form-control"
-                                                   placeholder="Patient Name" required>
+                                        <div class="form-group col-md-5 col-sm-6 col-xs-12">
+                                            <label class="form-label" for="patientName">Patient Name</label>
+                                            <input type="text"
+                                                   id="patientName"
+                                                   name="patientName"
+                                                   size="40"
+                                                   minlength="3"
+                                                   class="form-control"
+                                                   placeholder="Patient Name" required />
                                         </div>
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-
-                                            <label for="age">Patient Age</label>
-                                            <input type="text" id="age" size="40" class="form-control"
-                                                   placeholder="Patient Age" required>
+                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                            <label class="form-label" for="age">Patient Age</label>
+                                            <input type="number"
+                                                   id="age"
+                                                   name="age"
+                                                   min="0"
+                                                   max="100"
+                                                   class="form-control"
+                                                   placeholder="Patient Age" required />
                                         </div>
                                         <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label>Gender</label>
+                                            <label class="form-label">Gender</label>
                                             <div>
                                                 <input id="male" type="radio" name="radio" checked/>
-                                                <label for="male" class="mr-2">Male</label>
+                                                <label class="form-label mr-2" for="male">Male</label>
                                                 <input id="female" type="radio" name="radio"/>
-                                                <label for="female" class="mr-2">Female</label>
+                                                <label class="form-label mr-2" for="female">Female</label>
                                                 <input id="other" type="radio" name="radio"/>
-                                                <label for="other">Others</label>
+                                                <label class="form-label" for="other">Others</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="mobile">Patient Mobile</label>
-                                            <input type="text" id="mobile" size="40" class="form-control"
+                                            <label class="form-label" for="mobile">Patient Mobile</label>
+                                            <input type="number"
+                                                   id="mobile"
+                                                   name="mobile"
+                                                   min="10"
+                                                   data-msg-min="Mobile need to 10 digit long"
+                                                   max="10"
+                                                   data-msg-max="Mobile need to 10 digit long"
+                                                   class="form-control"
                                                    placeholder="Patient Mobile" required>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="diagnosis">Diagnosis</label>
+                                            <label class="form-label" for="diagnosis">Diagnosis</label>
                                             <select class="form-control custom-select custom-select-sm form-control-sm"
                                                     id="diagnosis">
                                                 <option>Gall bladder</option>
@@ -245,7 +274,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label for="treatmentPlan">Treatment Plan </label>
+                                            <label class="form-label" for="treatmentPlan">Treatment Plan </label>
                                             <select class="form-control custom-select custom-select-sm form-control-sm"
                                                     id="treatmentPlan">
                                                 <option>Multi Sharing</option>
@@ -256,7 +285,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-12">
-                                            <label for="doctorNotes">Doctor Notes</label>
+                                            <label class="form-label" for="doctorNotes">Doctor Notes</label>
                                             <textarea class="form-control" id="doctorNotes" style="height: 150px;"></textarea>
                                         </div>
                                     </div>
@@ -400,10 +429,27 @@
     </footer>
 
 </div><!-- End main-Wrapper -->
-<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/bootstrap.min.js"></script>
-<!-- custom js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><!-- custom js -->
+
+<script src=https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"> </script>
+
+<script>
+
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("submitted!");
+        }
+    });
+    $().ready(function() {
+        $("#pageForm").validate();
+    });
+
+</script>
 </body>
 
 

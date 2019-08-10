@@ -133,6 +133,13 @@
             background: #364c7d;
             color: #fff;
         }
+        .contact-form-wrapper label {
+            color: #ff3900;
+        }
+
+        .contact-form-wrapper .form-label {
+            color: #023951;
+        }
     </style>
 </head>
 
@@ -202,37 +209,41 @@
                     <div class="offset-md-1 col-md-10">
                         <div class="contact-form-inner">
                             <div role="form">
-                                <form action="#" method="post">
+                                <form id="pageForm" action="#" method="post">
                                     <div class="row">
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="firstName">First Name</label>
-                                            <input type="text" id="firstName" size="40" class="form-control"
+                                            <label class="form-label" for="firstName">First Name</label>
+                                            <input type="text"
+                                                   id="firstName"
+                                                   name="firstName"
+                                                   size="40"
+                                                   class="form-control"
                                                    placeholder="First Name" required>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="lastName">Last Name</label>
+                                            <label class="form-label" for="lastName">Last Name</label>
                                             <input type="text" id="lastName" size="40" class="form-control"
                                                    placeholder="Last Name" required>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="mobile">User Mobile</label>
+                                            <label class="form-label" for="mobile">User Mobile</label>
                                             <input type="text" id="mobile" size="40" class="form-control"
                                                    placeholder="Mobile Number" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label for="email">Email</label>
+                                            <label class="form-label" for="email">Email</label>
                                             <input type="text" id="email" size="40" class="form-control"
                                                    placeholder="Email Address" required>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label for="password">Password</label>
+                                            <label class="form-label" for="password">Password</label>
                                             <input type="password" id="password" size="40" class="form-control"
                                                    placeholder="Password" required>
                                         </div>
                                         <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="role">User Role</label>
+                                            <label class="form-label" for="role">User Role</label>
                                             <select class="form-control custom-select custom-select-sm form-control-sm"
                                                     id="role">
                                                 <option>Admin</option>
@@ -246,7 +257,7 @@
                                         <div class="form-group col-12">
                                             <div class="checkbox checkbox-primary">
                                                 <input id="checkbox2" type="checkbox" checked="">
-                                                <label for="checkbox2">
+                                                <label class="form-label" for="checkbox2">
                                                     Active
                                                 </label>
                                             </div>
@@ -396,6 +407,21 @@
 <!-- custom js -->
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("submitted!");
+        }
+    });
+    $().ready(function() {
+
+        $("#pageForm").validate();
+    });
+
+</script>
 </body>
+</html>
 
 

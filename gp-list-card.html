@@ -10,14 +10,16 @@
     <!-- Custom CSS -->
     <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/style.css" rel="stylesheet">
     <link href="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <link rel="shortcut icon" href="https://alpha.abhospitals.com/wp-content/themes/abhospital/images/favicon.png"/>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <title>New Patient | AB Hospital</title>
+    <title>My Patients | AB Hospital</title>
     <style>
         .contact-form-wrapper {
             padding: 25px 0 25px 0;
@@ -129,9 +131,48 @@
             height: 400px;
         }
 
-        .special-button:hover {
-            background: #364c7d;
-            color: #fff;
+        .page-link {
+            color: #023951;
+        }
+
+        .contact-form-wrapper {
+            background: #fff;
+        }
+        /* For Date picker button start */
+        .applyBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .cancelBtn {
+            width : 25%;
+            border-radius:4px;
+            height: 25px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        /* For Date picker button end */
+
+        .contact-form-wrapper .btn-default{
+            height: 50px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .contact-form-wrapper .clearBtn {
+            width : 100%;
+            border-radius:4px;
+            height: 40px;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        .contact-form-wrapper .searchBtn {
+            width : 100%;
+            border-radius:4px;
+            height: 40px;
+            line-height: 1.5;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -163,21 +204,23 @@
                     <ul class="top-right-menu list-inline d-flex justify-content-end">
                         <li class="d-none d-md-block d-lg-block"><a
                                 href="#"><i class="flaticon-home-page"></i>Home</a></li>
-                        <li class="phone-popup">
-                            <a href=";" id="phone_popup"><i class="flaticon-arrow"></i> Sign Out</a>
+                        <li>
+                            <a href="#"><i class="flaticon-arrow"></i> Sign Out</a>
                         </li>
                     </ul>
                     <div class="collapse navbar-collapse" id="navbarNav">
+
                         <ul class="navbar-nav ml-auto justify-content-end align-items-center">
                             <li class="nav-item menu-item">
-                                <a href="admin-users-list.html"><i class="flaticon-team" style="color: #c66392"></i> All Users</a>
+                                <a href="gp.html"><i class="flaticon-team" style="color: #c66392"></i> My Patients</a>
                             </li>
                             <li class="nav-item menu-item">
-                                <a href="admin-add-user.html"><i class="flaticon-person" style="color: #c66392"></i> New User</a>
-                            </li>
+                                <a href="gp-new-patient.html"><i class="flaticon-patient" style="color: #c66392"></i>
+                                    New Patient</a></li>
                             <li class="nav-item menu-item">
-                                <a href="admin-treatment-list.html"><i class="flaticon-clinic" style="color: #c66392"></i> Treatments</a>
-                            </li>
+                                <a href="gp-accounting.html"><i class="flaticon-money" style="color: #c66392"></i> Accounting</a></li>
+                            <li class="nav-item menu-item">
+                                <a href="gp-profile.html"><i class="flaticon-user" style="color: #c66392"></i> Profile</a></li>
                         </ul>
                     </div>
                 </div>
@@ -191,92 +234,153 @@
         <div id="innerservicess" class="inner-main-banner">
             <div class="inner-banner-content">
                 <div class="container d-flex align-items-center">
-                    <h1>User</h1>
-                    <p>Create New</p>
+                    <h1>My Patients</h1>
+                    <p>Search</p>
                 </div>
             </div>
         </div>
         <div class="contact-form-wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="offset-md-1 col-md-10">
-                        <div class="justify-content-center">
-                            <div class="alert alert-danger" role="alert">
-                                Error message from server
-                            </div>
+                <form action="/" method="get">
+                    <div class="row">
+                        <div class="form-group offset-md-1 col-md-3 col-sm-12 col-xs-12">
+                            <label for="name">Patient Name</label>
+                            <input type="text" id="name" name="name" class="form-control"
+                                   placeholder="Patient Name">
                         </div>
-                        <div class="contact-form-inner">
-                            <div role="form">
-                                <form action="#" method="post">
-                                    <div class="row">
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="firstName">First Name</label>
-                                            <input type="text" id="firstName" size="40" class="form-control"
-                                                   placeholder="First Name" required>
-                                        </div>
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="lastName">Last Name</label>
-                                            <input type="text" id="lastName" size="40" class="form-control"
-                                                   placeholder="Last Name" required>
-                                        </div>
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="mobile">User Mobile</label>
-                                            <input type="text" id="mobile" size="40" class="form-control is-invalid"
-                                                   placeholder="Mobile Number" required>
-                                            <div class="invalid-feedback">
-                                                Invalid Mobile
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label for="email">Email</label>
-                                            <input type="text" id="email" size="40" class="form-control"
-                                                   placeholder="Email Address" required>
-                                        </div>
-                                        <div class="form-group col-md-4 col-sm-12 col-xs-12">
-                                            <label for="password">Password</label>
-                                            <input type="password" id="password" size="40" class="form-control is-invalid"
-                                                   placeholder="Password" required>
-                                            <div class="invalid-feedback">
-                                                Invalid Password
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-4 col-sm-6 col-xs-12">
-                                            <label for="role">User Role</label>
-                                            <select class="form-control custom-select custom-select-sm form-control-sm"
-                                                    id="role">
-                                                <option>Admin</option>
-                                                <option>General Practitioner</option>
-                                                <option>Manager</option>
-                                                <option>Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group col-12">
-                                            <div class="checkbox checkbox-primary">
-                                                <input id="checkbox2" type="checkbox" checked="">
-                                                <label for="checkbox2">
-                                                    Active
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="offset-md-4 col-md-4 col-sm-12 col-xs-12 text-center">
-                                            <button class="btn btn-default" type="submit">Add User</button>
-                                        </div>
-                                    </div>
-                                </form>
+                        <!--<div class="blog-search offset-md-1 col-md-3 col-sm-12 col-xs-12">-->
+                        <!--<input type="text" class="form-control" placeholder="Name.." name="s" id="search" value="">-->
+                        <!--<button class="button" type="submit"><i class="fa fa-search"></i></button>-->
+                        <!--</div>-->
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <label class="form-label" for="gender">Gender </label>
+                            <select class="form-control custom-select custom-select-sm form-control-sm"
+                                    id="gender" multiple>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <label for="status">Status </label>
+                            <select class="form-control custom-select custom-select-sm form-control-sm"
+                                    id="status" multiple>
+                                <option>New</option>
+                                <option>OPD</option>
+                                <option>PAC</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-12 col-xs-12">
+                            <label for="dateRange">Date Range</label>
+                            <input type="text" id="dateRange" name="dateRange" class="form-control"
+                                   placeholder="Date Range" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group offset-md-1 col-md-2 col-sm-12 col-xs-12">
+                            <h5 style="color: #c76392;">4 results found</h5>
+                        </div>
+                        <div class="form-group offset-md-4 col-md-2 col-sm-12 col-xs-12">
+                            <button class="btn btn-default searchBtn" type="submit">Search</button>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-12 col-xs-12">
+                            <button id="clearButton" class="btn btn-default clearBtn" type="button">Clear</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mb-3">
+                    <div class="offset-md-1 col-md-5">
+                        <div class="card">
+                            <h5 class="card-header">Sapna Mittal &nbsp;&nbsp;<span class="badge badge-primary">New</span> </h5>
+                            <div class="card-body">
+                                <h5 class="card-title">48 Female</h5>
+                                <span class="card-text">
+                                    <strong>Diagnosis :</strong> Gall bladder &nbsp;&nbsp; <strong>Date :</strong> 23, June 2019
+                                </span>
+                            </div>
+                            <div class="card-footer">
+                                <a title="View" href="gp-patient-details.html" class="btn btn-outline-success"> <i class="fa fa-eye"></i>
+                                </a>
+                                <a title="Edit" href="gp-new-patient.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                </a>
+                                <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <div class="card">
+                            <h5 class="card-header">Diksha Singh &nbsp;&nbsp;<span class="badge badge-success">OPD</span> </h5>
+                            <div class="card-body">
+                                <h5 class="card-title">52 Female</h5>
+                                <span class="card-text">
+                                    <strong>Diagnosis :</strong> TLH &nbsp;&nbsp; <strong>Date :</strong> 24, June 2019
+                                </span>
+                            </div>
+                            <div class="card-footer">
+                                <a title="View" href="gp-patient-details.html" class="btn btn-outline-success"> <i class="fa fa-eye"></i>
+                                </a>
+                                <a title="Edit" href="gp-new-patient.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                </a>
+                                <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="offset-md-1 col-md-5">
+                        <div class="card">
+                            <h5 class="card-header">Vinod Kumar &nbsp;&nbsp;<span class="badge badge-warning">PAC</span> </h5>
+                            <div class="card-body">
+                                <h5 class="card-title">23 Male</h5>
+                                <span class="card-text">
+                                    <strong>Diagnosis :</strong> Hernia &nbsp;&nbsp; <strong>Date :</strong> 26, June 2019
+                                </span>
+                            </div>
+                            <div class="card-footer">
+                                <a title="View" href="gp-patient-details.html" class="btn btn-outline-success"> <i class="fa fa-eye"></i>
+                                </a>
+                                <a title="Edit" href="gp-new-patient.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                </a>
+                                <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card">
+                            <h5 class="card-header">Rajiv Garg &nbsp;&nbsp;<span class="badge badge-danger">OT</span></h5>
+                            <div class="card-body">
+                                <h5 class="card-title">43 Male</h5>
+                                <span class="card-text">
+                                    <strong>Diagnosis :</strong> Piles &nbsp;&nbsp; <strong>Date :</strong> 23, June 2019
+                                </span>
+                            </div>
+                            <div class="card-footer">
+                                <a title="View" href="gp-patient-details.html" class="btn btn-outline-success"> <i class="fa fa-eye"></i>
+                                </a>
+                                <a title="Edit" href="gp-new-patient.html" class="btn btn-outline-warning"> <i class="fa fa-edit"></i>
+                                </a>
+                                <a title="Delete" href="" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
-
 
     </div><!-- END home-page HERE -->
     <footer>
@@ -401,12 +505,52 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You are about delete Patient.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><!-- End main-Wrapper -->
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/bootstrap.min.js"></script>
 <!-- custom js -->
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function () {
+        $('input[name="dateRange"]').daterangepicker({
+            opens: 'left',
+            startDate: moment().subtract(30, 'days'),
+            endDate: moment(),
+            locale: {
+                format: 'DD MMM YYYY'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MMM-DD') + ' to ' + end.format('YYYY-MMM-DD'));
+        });
+    });
+    $("#clearButton").click(function(){
+        $("#name").val("");
+        $("select option").prop("selected", false);
+        $('input[name="dateRange"]').data('daterangepicker').setStartDate(moment().subtract(30, 'days'));
+        $('input[name="dateRange"]').data('daterangepicker').setEndDate(moment());
+    });
+</script>
 </body>
 
 

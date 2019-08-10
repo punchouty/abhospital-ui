@@ -42,9 +42,6 @@
             margin-bottom: 10px;
         }
 
-
-
-
         .contact-form-wrapper input[type=checkbox] + label:before {
             content: "";
         }
@@ -54,6 +51,14 @@
         }
 
         .contact-form-wrapper input[type="checkbox"] { display: inline  ; }
+
+        .contact-form-wrapper label {
+            color: #ff3900;
+        }
+
+        .contact-form-wrapper .form-label {
+            color: #023951;
+        }
 
     </style>
 </head>
@@ -154,41 +159,49 @@
             <div class="container">
                 <div class="row">
                     <div class="offset-md-3 col-md-6">
+                        <div class="justify-content-center">
+                            <div class="alert alert-danger" role="alert">
+                                Error message from server
+                            </div>
+                        </div>
                         <div class="contact-form-inner">
                             <div role="form">
-                                <form action="#" method="post">
+                                <form id="pageForm" action="#" method="post">
                                     <div class="row">
                                         <div class="form-group offset-md-1 col-md-10 col-sm-12 col-xs-12">
-                                            <label for="username">Mobile/Email</label><br/>
-                                            <input type="text" id="username"
-                                                   placeholder="Mobile/Email"
+                                            <label class="form-label" for="username">Mobile/Email</label><br/>
+                                            <input type="text"
+                                                   id="username"
+                                                   name="username"
+                                                   placeholder="98XXXXXXXXXX or name@example.com"
                                                    size="40"
-                                                   class="form-control"
-                                                   aria-required="true"
-                                                   aria-invalid="false" required/>
+                                                   minlength="10"
+                                                   data-msg-minlength="Field need to be minimum 10 characters long"
+                                                   class="form-control" required/>
                                         </div>
-                                        <div class="form-group offset-md-1 col-md-10 col-sm-12 col-xs-12">
-                                            <label for="password">Password</label><br/>
-                                            <input type="password" id="password"
-                                                   placeholder="Password"
-                                                   class="form-control"
-                                                   aria-required="true"
-                                                   aria-invalid="false" required/>
-                                        </div>
-                                        <div class="form-group offset-md-1 col-md-10 col-sm-12 col-xs-12 text-center">
+                                        <div class="form-group col-md-10 col-sm-12 col-xs-12">
                                             <div class="checkbox checkbox-primary">
-                                                <input id="checkbox2" type="checkbox" checked="">
-                                                <label for="checkbox2">
+                                                <input id="otpCheckbox" type="checkbox">
+                                                <label class="form-label" for="otpCheckbox">
                                                     Use Mobile OTP
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12 text-center">
+                                        <div id="password-div" class="form-group offset-md-1 col-md-10 col-sm-12 col-xs-12">
+                                            <label class="form-label" for="password">Password</label><br/>
+                                            <input type="password"
+                                                   id="password"
+                                                   name="password"
+                                                   placeholder="Password"
+                                                   minlength="6"
+                                                   class="form-control" required />
+                                        </div>
+                                        <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12 mt-3 text-center">
                                             <input type="submit" value="LOGIN"
                                                    class="btn-default"/>
                                         </div>
                                         <div class="mt-3 offset-md-1 col-md-10 col-sm-12 col-xs-12 text-center">
-                                            <a href="forgot-error.html" class="btn btn-link">
+                                            <a href="forgot.html" class="btn btn-link">
                                                 Forgot Your Password?
                                             </a>
                                         </div>
@@ -327,10 +340,38 @@
     </footer>
 
 </div><!-- End main-Wrapper -->
-<script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/bootstrap.min.js"></script>
-<!-- custom js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><!-- custom js -->
+
+<script src=https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/custom.js"></script>
 <script src="https://alpha.abhospitals.com/wp-content/themes/abhospital/assets/js/smoothscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"> </script>
+
+<script>
+
+    $('#otpCheckbox').change(function() {
+        if($(this).is(":checked")) {
+            $("#password").val("$#%");
+            $("#password-div").hide();
+        }
+        else {
+            $("#password").val("");
+            $("#password-div").show();
+        }
+    });
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("submitted!");
+        }
+    });
+    $().ready(function() {
+
+        $("#pageForm").validate();
+    });
+
+</script>
 </body>
 
 
